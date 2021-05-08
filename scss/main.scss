@@ -1,0 +1,45 @@
+body {
+	margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4fbff;
+}
+
+h1, div, h1, h2, h3, p, a, ul, li, img, label,form{
+	margin: 0;
+	padding: 0;
+	display: block;
+	box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+	// max-width: 320px;
+    margin: 0 auto;
+    box-sizing: content-box
+}
+
+@mixin __425{
+    @media (min-width: 425px) {
+        @content;
+    }
+}
+
+@mixin __768 {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin __1024 {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@import 'header.scss';
+@import 'content.scss';
+@import 'footer.scss';

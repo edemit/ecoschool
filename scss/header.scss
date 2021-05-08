@@ -1,0 +1,218 @@
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 50;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+    background-color: #ffffff;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #f1f1f1;
+        z-index: 3;
+        @include __1024{
+            display: none;
+        }
+    }
+    &__wrapper{
+        position: relative;
+        display: flex;
+        height: 55px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 10px 0px 10px;
+    }
+    &__input{
+        display: none;
+        &:checked ~ .header__menu{
+            display: block;
+            transition: all 0.2s;
+            @include __1024{
+                display: none;
+            }
+        }
+        &:checked ~ .header__burger::before{
+            top: 10px;
+            transform: rotate(45deg);
+            transition: all 0.2s;
+        }
+        &:checked ~ .header__burger::after{
+            transform: rotate(-45deg);
+            bottom: 8px;
+            transition: all 0.2s;
+        }
+        &:checked ~ .header__burger span{
+            display: none;
+        }
+    }
+    &__burger{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 5;
+        @include __1024{
+            display: none;
+        }
+        &::before,&::after{
+            content: '';
+            transition: all 0.2s;
+            position: absolute;
+            background-color: #000000;
+            width: 100%;
+            height: 2px;
+            left: 0px;
+        }
+        &::before{
+            top: 0px;
+        }
+        &::after{
+            bottom: 0px;
+        }
+        &__center{
+            position: absolute;
+            background-color: #000000;
+            width: 100%;
+            height: 2px;
+            left: 0px;
+            top: 9px;
+        }
+    }
+    &__menu{
+        position: fixed;
+        display: none;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding: 70px 0px 0px 0px;
+        &__list{
+            &__block{
+                padding-top: 2px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                @include __1024{
+                    display: none;
+                }
+                &__title{
+                }
+                &__button{
+                    margin-right: 10px;
+                }
+                &__items{
+                    margin-top: 5px;
+                    width: 100%;
+                    background-color:#f1f1f1;
+                    &__item{
+                        margin: 10px 0px 10px 10px;
+                        background-image: linear-gradient(currentColor, currentColor);
+                        background-position: 0% 100%;
+                        background-repeat: no-repeat;
+                        background-size: 0% 2px;
+                        transition: background-size 0.3s;
+                        &:hover{
+                            color: #3b8ff0;
+                            background-size: 100% 2px;
+                            transition: all 0.2s; 
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    &__menu--desktop{
+        display: none;
+        justify-content: start;
+        z-index: 5;
+        width: 80%;
+        @include __1024{
+            display: flex;
+        }
+        &__items{
+            position: relative;
+            font-size: 18px;
+            margin-right: 10px;
+            &__title{
+                &:hover {
+                    .header__menu--desktop__items__list{
+                        display: block;
+                    }
+                }
+            }
+            &__list{
+                display: none;
+                position: absolute;
+                top: 20px;
+                left: 0px;
+                &__item{
+                    margin-right: 10px;
+                    background-image: linear-gradient(currentColor, currentColor);
+                    background-position: 0% 100%;
+                    background-repeat: no-repeat;
+                    background-size: 0% 2px;
+                    transition: background-size 0.3s;
+                    &:hover{
+                        color: #3b8ff0;
+                        background-size: 100% 2px;
+                        transition: all 0.2s; 
+                    }
+                }
+                &__item a{
+                    color: #000000;
+                    &:hover{
+                        transition: all 0.2s;
+                        color: #3b8ff0;
+                    }
+
+                }
+            }
+        }
+    }
+    &__menu--desktop2{
+        display: none;
+        position: fixed;
+        top: 60px;
+        border-radius: 15px;
+        background-color: rgba(244,251,255,.4);
+        padding: 15px;
+        width: 15%;
+        @include __1024{
+            display: block;
+        }
+        &__item{
+            margin:0px 0px 10px 0px;
+            font-size: 1.8vw;
+        }
+        &__item p{
+        }
+        &__item a{
+            display: flex;
+            color:rgb(126, 145, 159);
+        }
+        &__item i{
+            margin-right: 15px;
+            color: rgb(126, 145, 159);
+        }
+    }
+    &__title{
+        font-size: 24px;
+        font-weight: 400;
+        z-index: 5;
+    }
+    &__selector{
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(37,130,231,.4);
+        border-radius: 3px;
+        z-index: 5;
+    }
+}

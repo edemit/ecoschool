@@ -1,0 +1,103 @@
+.content{
+    margin-top: 55px;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+    background-attachment: scroll,fixed;
+    background-image: url(../img/bottom-left.4147d76f6bd5065fb0b63b72c94ed6ba.png),url(../img/top-right.14f476e598e888d8a555f2de58fab5a1.png);
+    background-position: 0 100%,100% 0;
+    background-size: 50% auto,50% auto;
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &__title{
+        width: 100%;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        font-size: 24px;
+        @include __1024{
+            margin-left: 175px;
+        }
+    }
+    &__blocks{
+        
+        @include __768{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0px 10px 0px 10px;
+        }
+        @include __1024{
+            width: 86%;
+            justify-content: flex-end;
+        }
+        &__block{
+            display: flex;
+            justify-content: start;
+            margin-bottom: 16px;
+            width: 288px;
+            height: 64px;
+            align-items: center;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.16), 0 0 1px 0 rgba(0,0,0,.12);
+            border-radius: 8px;
+            background-color: #ffffff;
+            flex-wrap: wrap;
+            color: #000000;
+            background-image: linear-gradient(currentColor, currentColor);
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+            transition: background-size 0.3s;
+            &:hover{
+                color: #3b8ff0;
+                background-size: 100% 2px;
+                transition: all 0.2s; 
+            }
+            @include __1024{
+                width: 420px;
+                height: 88px;
+            }
+            @include __768{
+                margin: 5px;
+            }
+            &__img{
+                margin-left: 16px;
+                width: 32px;
+                height: 32px;
+                background: url(../img/2_content/sample.png);
+                background-size: cover;
+                border-radius: 64px;
+                @include __1024{
+                    width: 64px;
+                    height: 64px;
+                }
+            }
+            &__text{
+                margin-left: 15px;
+                
+                &__title,&__subtitle{
+                    width: 150px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include __1024{
+                        width: 250px;
+                    }
+                }
+                &__title{
+                    margin-top: 5px;
+                    line-height: 12px;
+                }
+                &__subtitle{
+    
+                }
+            }
+            &__mark{
+                font-size: 18px;
+                margin-left: 10px;
+                font-weight: 600;
+            }
+        }
+    }
+}
